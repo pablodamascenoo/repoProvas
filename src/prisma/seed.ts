@@ -3,7 +3,7 @@ import client from "../config/database.js"
 
 async function main() {
     const SALT = 10;
-    const hashedPassword = bcrypt.hashSync("admin", SALT);
+    const hashedPassword = bcrypt.hashSync("1234567890", SALT);
 
     await client.$executeRaw`TRUNCATE TABLE users`;
 

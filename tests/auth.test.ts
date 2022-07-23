@@ -42,8 +42,7 @@ describe("POST /auth/login", () => {
     it("token on valid input", async () => {
         const body = { email: "admin@gmail.com", password: "1234567890" };
         const response = await supertest(app).post("/auth/login").send(body);
-        const token = response.body.token;
-
-        expect(token).not.toBeNull();
+        const token = response.text;
+        expect(token).not.toBe(undefined);
     });
 });
