@@ -5,7 +5,7 @@ import * as authService from "../services/authService.js"
 export async function postLogin(req: Request, res: Response) {
     const userData:UserInsertData = req.body
     const token = await authService.login(userData)
-    return res.send(token)
+    return res.send({token})
 }
 
 export async function postRegister(req: Request, res: Response) {
