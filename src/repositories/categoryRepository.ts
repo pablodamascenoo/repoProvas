@@ -9,3 +9,8 @@ export async function getCategoryById(id:number) {
     })
     return foundCategory
 }
+
+export async function getAllCategories(){
+    const categories = await client.categorie.findMany({})
+    return categories
+}
