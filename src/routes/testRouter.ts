@@ -4,9 +4,9 @@ import schemaValidator from "../middlewares/schemaValidator.js";
 import verifyToken from "../middlewares/tokenValidator.js";
 import testSchema from "../schemas/testSchema.js";
 
-const testRouter = Router()
+const testRouter = Router();
 
-testRouter.post("/tests/create", verifyToken, schemaValidator(testSchema), postTest)
-testRouter.get("/tests", getTests)
+testRouter.post("/tests", verifyToken, schemaValidator(testSchema), postTest);
+testRouter.get("/tests", verifyToken, getTests);
 
-export default testRouter
+export default testRouter;
